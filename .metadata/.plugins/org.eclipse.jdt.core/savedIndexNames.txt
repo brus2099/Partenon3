@@ -1,0 +1,7 @@
+INDEX VERSION 1.131+/home/brus_cg/Documents/DataStructure/.metadata/.plugins/org.eclipse.jdt.core
+3821359462.index
+4152358078.index
+2717414340.index
+918010345.index
+4117257523.index
+3398836986.index

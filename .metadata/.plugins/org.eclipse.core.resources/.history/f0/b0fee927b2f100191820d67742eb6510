@@ -1,0 +1,34 @@
+package fes.aragon;
+
+import java.util.ArrayList;
+
+import fes.aragon.dado.Dado;
+
+public class Juego {
+	
+	private ArrayList<Jugador> jugadores = new ArrayList<>();
+	
+	public Juego() {
+		
+	}
+
+	public static void main(String[] args) {
+		Dado dadoUno = new Dado();
+		Dado dadoDos = new Dado();
+		Jugador jugador = new Jugador("Brus");
+		jugador.setDadoUno(dadoUno);
+		jugador.setDadoDos(dadoDos);
+		
+		jugador.getDadoUno().lanzar();
+		jugador.getDadoDos().lanzar();
+		int var1 = jugador.getDadoUno().getCara();
+		int var2 = jugador.getDadoDos().getCara();
+		int suma = var1 + var2;
+		
+		if(suma ==7) {
+			System.out.println("Gana");
+		} else {
+			System.out.println("Pierde");
+		}
+	}
+}

@@ -1,0 +1,12 @@
+package fes.aragon.busqueda;
+
+public class BusquedaBinaria {
+
+    int central;
+    int inferior;
+    
+
+    central = (inferior+superior)/2;
+
+
+}

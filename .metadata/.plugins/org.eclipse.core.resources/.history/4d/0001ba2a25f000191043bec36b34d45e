@@ -1,0 +1,11 @@
+package fes.aragon;
+
+public class Juego {
+
+	Jugador jugador = new Jugador();
+	jugador.getDadoUno().lanzar();
+	jugador.getDadoDos().lanzar();
+	int var1 = jugador.getDadoUno().getCara();
+	int var2 = jugador.getDadoUno().getCara();
+	int suma = var1 + va2;
+}

@@ -1,0 +1,14 @@
+package fes.aragon.dado;
+
+public class Dado {
+
+	int cara;
+
+	private int getCara() {
+		return cara;
+	}
+	
+	public void lanzar() {
+		
+	}
+}
