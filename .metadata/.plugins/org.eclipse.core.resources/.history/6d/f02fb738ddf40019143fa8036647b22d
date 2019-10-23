@@ -1,0 +1,20 @@
+package fes.aragon.inicio;
+
+import fes.aragon.arbol.ArbolBinario;
+
+public class Inicio {
+
+	public static void main(String[] args) {
+		ArbolBinario<Integer> arb = new ArbolBinario<>();
+		arb.insertar();
+		arb.insertar();
+		arb.insertar();
+		arb.insertar();
+		arb.insertar();
+		arb.insertar();
+		arb.insertar();
+		arb.insertar();
+		arb.recAmplitud("-----------");
+		// 
+	}
+}

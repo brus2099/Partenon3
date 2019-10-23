@@ -1,0 +1,14 @@
+package fes.aragon.inicio;
+
+import fes.aragon.clases.Ubicacion;
+
+public class Inicio {
+
+	public static void main(String[] args) {
+		
+		Ubicacion ub1 = new Ubicacion();
+		ub1.setEstantes("A1");
+		
+		
+	}
+}

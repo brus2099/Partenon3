@@ -1,0 +1,7 @@
+package fes.aragon.clases;
+
+public class Genero {
+
+	private String nombre;
+	private int numeroGenero;
+}

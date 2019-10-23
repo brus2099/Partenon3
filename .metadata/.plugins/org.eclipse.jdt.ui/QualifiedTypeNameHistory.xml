@@ -4,6 +4,8 @@
 <fullyQualifiedTypeName name="fes.aragon.dado.Dado"/>
 <fullyQualifiedTypeName name="fes.aragon.Juego"/>
 <fullyQualifiedTypeName name="fes.aragon.Jugador"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.io.ObjectInputStream.GetField"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="fes.aragon.clases.Genero"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

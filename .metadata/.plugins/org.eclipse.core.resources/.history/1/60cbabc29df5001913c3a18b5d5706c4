@@ -1,0 +1,7 @@
+package fes.aragon.clases;
+
+public class Autor {
+
+	private String nombre;
+	private String correo;
+}

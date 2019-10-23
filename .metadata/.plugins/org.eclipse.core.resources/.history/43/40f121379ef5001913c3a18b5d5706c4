@@ -1,0 +1,22 @@
+package fes.aragon.clases;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Libro {
+
+	private String titulo;
+	//private String autor;
+	private ArrayList<Autor> autores = new ArrayList<>();
+	private String edicion;
+	private Editorial editorial;
+	private int isbn;
+	private String pais;
+	private Date anio;
+	private float precio;
+	private int existencia;
+	private Genero genero;
+	private boolean ebook;
+	private String pasta;
+	private String lenguaje;
+}

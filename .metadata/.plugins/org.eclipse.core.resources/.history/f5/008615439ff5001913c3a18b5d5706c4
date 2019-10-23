@@ -1,0 +1,10 @@
+package fes.aragon.clases;
+
+import java.util.ArrayList;
+
+public class Genero {
+
+	private String nombre;
+	private int numeroGenero;
+	private ArrayList<Ubicacion> ubicacion;
+}

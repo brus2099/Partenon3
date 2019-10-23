@@ -61,3 +61,14 @@ public class Juego {
 		}
 	}
 }
+
+// La libreria el partenon quiere llevar un res¿gistro de su almacen de los libros que tiene.
+// Diseña una aplicacion de escritorio que permita llevar este control empezando desde el diseño uml hasta
+// el diseño de la interfaz grafica(view)
+
+
+
+
+
+
+

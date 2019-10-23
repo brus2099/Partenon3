@@ -1,0 +1,248 @@
+package fes.aragon.listasimplet;
+
+import fes.aragon.nodo.Nodo;
+
+public class TDAListaSimple<T> {
+	private Nodo<T> cabeza;
+	private Nodo<T> cola;
+	private int longitud;
+
+	/**
+	 * 
+	 */
+	public TDAListaSimple() {
+		cabeza = cola = null;
+	}
+	
+	/**
+	 * 
+	 * @param dato
+	 */
+	public void insertarCola(T dato) {
+		if (cabeza == null) {
+			cabeza = new Nodo<T>(dato);
+			cola = cabeza;
+		} else {
+			Nodo<T> temp = new Nodo<T>(dato);
+			cola.setSiguiente(temp);
+			cola = temp;
+		}
+		longitud++;
+	}
+	
+	/**
+	 * 
+	 * @param dato
+	 */
+	public void insertarCabeza(T dato) {
+		if (cabeza == null) {
+			cabeza = new Nodo<T>(dato);
+			cola = cabeza;
+		} else {
+			Nodo<T> temp = new Nodo<T>(dato);
+			temp.setSiguiente(cabeza);
+			cabeza = temp;
+		}
+		longitud++;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean esVacia() {
+		return cabeza == null;
+	}
+	
+	/**
+	 * 
+	 */
+	public void mostrarDatos() {
+		for (Nodo<T> temp = cabeza; temp != null; temp = temp.getSiguiente()) {
+			System.out.println(temp.toString());
+		}
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public int getLongitud() {
+		return longitud;
+	}
+	
+	/**
+	 * 
+	 * @param indice
+	 * @return
+	 */
+	public T obtenerDato(int indice) {
+		boolean error = false;
+		if (indice < 0 || indice >= longitud) {
+			error = true;
+		}
+		Nodo<T> tmp = null;
+		if (!error) {
+			int i = 0;
+			for (tmp = cabeza; i != indice; tmp = tmp.getSiguiente(), i++) {
+			}
+		}
+		if (tmp != null) {
+			return tmp.getDato();
+		} else {
+			return null;
+		}
+	}
+	
+	/**
+	 * 
+	 * @param dato
+	 */
+	public void eliminarIndice(int dato) {
+		boolean error = false;
+		if (dato < 0 || dato >= longitud) {
+			error = true;
+		}
+		if (!error) {
+			if (dato == longitud - 1) {
+				eliminarCola();
+			} else if (dato == 0) {
+				eliminarCabeza();
+			} else {
+				int i = 0;
+				Nodo<T> tmp = cabeza.getSiguiente();
+				Nodo<T> previo = cabeza;
+				for (; tmp != null && i != dato - 1; previo = tmp, tmp = tmp
+						.getSiguiente(), i++) {
+				}
+				previo.setSiguiente(tmp.getSiguiente());
+				tmp.setSiguiente(null);
+				longitud--;
+			}
+
+		}
+	}
+
+	
+	/**
+	 * @return 
+	 * 
+	 */
+	public T eliminarCabeza() {
+		Nodo<T> dato = null;
+		if(this.cabeza==this.cola) {
+			dato=cabeza;
+			this.cabeza = this.cola = null;
+		}else{
+			dato = cabeza;
+			Nodo<T> temp = cabeza.getSiguiente();
+			cabeza= temp;
+		}
+		longitud--;
+		return dato.getDato();
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public T eliminarCola() {
+		Nodo<T> dato= null;
+		if (this.cabeza == this.cola) {
+			dato = cabeza;
+			this.cabeza = this.cola=null;
+			
+		} else {
+			Nodo<T> tmp = cabeza.getSiguiente();
+			Nodo<T> previo = cabeza;
+			for (;tmp.getSiguiente() != null;
+					previo=tmp,tmp=tmp.getSiguiente());
+			this.cola=previo;
+			dato=tmp;
+			this.cola.setSiguiente(null);
+			}
+			longitud--;
+			return dato.getDato();
+	}
+	
+	/**
+	 * 
+	 * @param dato
+	 * @return
+	 */
+	public boolean eliminarDato(T dato) {
+		boolean borrar=false;
+		if (this.cabeza==this.cola) {
+			if((this.cabeza==this.cola) &&
+					(dato.equals(this.cabeza.getDato()))){
+				this.cabeza = this.cola=null;
+				longitud --;
+				borrar=true;
+			}else{
+				if ((dato.equals(this.cabeza.getDato()))) {
+					this.cabeza =cabeza.getSiguiente();
+					longitud--;
+					borrar = true;
+			}else {
+				Nodo<T> tmp = cabeza.getSiguiente();
+				Nodo<T> previo = cabeza;
+				for(; tmp !=null &&
+						!(tmp.getDato().equals(dato));
+						previo= previo.getSiguiente(),
+								tmp =tmp.getSiguiente());
+					if (tmp != null) {
+						previo.setSiguiente(tmp.getSiguiente());
+						if (tmp == this.cola) {
+							this.cola=previo;
+							cola.setSiguiente(null);
+						}
+						longitud--;
+						borrar=true;
+					}
+				}
+			}
+		}
+		return borrar;
+	}
+	
+	/**
+	 * 
+	 * @param dato
+	 * @return
+	 */
+	@SuppressWarnings("unused")
+	public int obtenerIndice(T dato) {
+		int indice = -1;
+		if(this.cabeza!=null) {
+			if((dato.equals(this.cabeza.getDato()))) {
+			}else {
+				Nodo<T> tmp =cabeza.getSiguiente();
+				int i=1;
+				for(; tmp != null&&
+						!(tmp.getDato().equals(dato));
+						tmp = tmp.getSiguiente(),i++);
+				if (tmp == null) {
+					indice=i;
+					}
+				}
+			}
+			return indice;
+		}
+	public Nodo<T> obtenerNodo(int indice){
+		boolean error= false;
+		if(indice<0||indice>=longitud) {
+			error=true;
+		}
+		Nodo<T> tmp = null;
+		if(!error) {
+			int i = 0;
+			for (tmp= cabeza; i!= indice;tmp= tmp.getSiguiente(), i++);
+				
+			}
+			if(tmp != null) {
+				return tmp;
+			}else {
+				return null;
+			}
+			}
+}

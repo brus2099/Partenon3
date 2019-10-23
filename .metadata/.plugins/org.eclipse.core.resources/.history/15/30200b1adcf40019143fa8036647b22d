@@ -1,0 +1,58 @@
+package fes.aragon.arbol;
+
+import fes.aragon.cola.Cola;
+import fes.aragon.nodo.Nodo;
+
+public class ArbolBinario<T> {
+	private Nodo<T> raiz;
+
+	public ArbolBinario() {
+		super();
+		this.raiz = null;
+	}
+
+	public void insertar(T dato) {
+		Nodo<T> n = raiz, prev = null;
+		while (n != null) {
+			prev = n;
+			if (n.compararMenor(dato)) {
+				n = n.getHijoDer();
+			} else {
+				n = n.getHijoIzq();
+			}
+		}
+		if (raiz == null) {
+			raiz = new Nodo<T>(dato);
+		} else {
+			if (prev.compararMenor(dato)) {
+				prev.setHijoDer(new Nodo<T>(dato));
+			} else {
+				prev.setHijoIzq(new Nodo<T>(dato));
+			}
+		}
+	}
+
+	public void recAmplitud() {
+		Nodo<T> n = raiz;
+		Cola<Nodo<T>> cola = new Cola<>();
+		if (n != null) {
+			cola.Insertar(raiz);
+			while (!cola.vacia()) {
+				public class Cola {
+
+				}
+
+				n = cola.sacar();
+				System.out.println(n.getDato());
+				if (n.getHijoIzq() != null) {
+					cola.Insertar(n.getHijoIzq());
+				}
+				if (n.getHijoDer() != null) {
+					cola.Insertar(n.getHijoDer());
+				}
+			}
+		}
+	}
+
+	
+}

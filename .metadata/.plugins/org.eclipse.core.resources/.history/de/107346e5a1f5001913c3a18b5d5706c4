@@ -1,0 +1,35 @@
+package fes.aragon.inicio;
+
+import java.awt.geom.GeneralPath;
+
+import fes.aragon.clases.Editorial;
+import fes.aragon.clases.Genero;
+import fes.aragon.clases.Ubicacion;
+
+public class Inicio {
+
+	public static void main(String[] args) {
+		
+		Ubicacion ub1 = new Ubicacion();
+		ub1.setEstantes("A1");
+		ub1.setFilas(1);
+		Ubicacion ub2 = new Ubicacion();
+		ub2.setEstantes("A3");
+		ub2.setFilas(3);
+		
+		Genero gen = new Genero();
+		gen.setNombre("Ingrenieria");
+		gen.setNumeroGenero(1);
+		gen.getUbicacion().add(ub1);
+		Genero gen2 = new Genero();
+		gen2.setNombre("Fisica");
+		gen2.setNumeroGenero(2);
+		gen2.getUbicacion().add(ub2);
+		
+		Editorial edit1 = new Editorial();
+		edit1.setNombre(Alfa Omega);
+		edit1.setDireccion("Edo Mex");
+		edit1.setCorreo("contacto@alfaomega.com");
+		
+	}
+}
