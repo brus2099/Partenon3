@@ -1,7 +1,0 @@
-package fes.aragon.clases;
-
-public class Ubicacion {
-
-	private String estantes;
-	private int filas;
-}

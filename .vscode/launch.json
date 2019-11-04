@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - PruebaArbol",
+            "request": "launch",
+            "mainClass": "fes.aragon.pruebas.PruebaArbol",
+            "projectName": "EstructuraDatos"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Inicio",
             "request": "launch",
             "mainClass": "fes.aragon.inicio.Inicio",

@@ -1,0 +1,17 @@
+{
+  "C:\\Users\\Bruno Cruz Granados\\OneDrive\\PC Casa 2015-2017\\Documentos\\DataStructure-POO\\Partenon\\src": {
+    "location": "C:\\Users\\Bruno Cruz Granados\\OneDrive\\PC Casa 2015-2017\\Documentos\\DataStructure-POO\\Partenon\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\Users\\Bruno Cruz Granados\\OneDrive\\PC Casa 2015-2017\\Documentos\\DataStructure-POO\\Partenon\\src\u0027. Skipped."
+  },
+  "C:\\Program Files\\Java\\jdk1.8.0_221\\jre\\lib\\rt.jar": {
+    "location": "C:\\Program Files\\Java\\jdk1.8.0_221\\jre\\lib\\rt.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027C:\\Program Files\\Java\\jdk1.8.0_221\\jre\\lib\\rt.jar\u0027. Neither fingerprint \u0027505699d8957371e594c13673fffd29d0dae85e2c\u0027 nor symbolic name \u0027jre\u0027 are known."
+  },
+  "C:\\Users\\Bruno Cruz Granados\\OneDrive\\PC Casa 2015-2017\\Documentos\\DataStructure-POO\\EstructuraDatos\\src": {
+    "location": "C:\\Users\\Bruno Cruz Granados\\OneDrive\\PC Casa 2015-2017\\Documentos\\DataStructure-POO\\EstructuraDatos\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\Users\\Bruno Cruz Granados\\OneDrive\\PC Casa 2015-2017\\Documentos\\DataStructure-POO\\EstructuraDatos\\src\u0027. Skipped."
+  }
+}

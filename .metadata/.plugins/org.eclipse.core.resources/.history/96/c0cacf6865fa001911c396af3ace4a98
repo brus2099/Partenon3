@@ -1,0 +1,34 @@
+package fes.aragon.pruebas;
+
+import fes.aragon.arbolbinario.ArbolBinario;
+
+public class PruebaArbol {
+
+    public static void main(String[] args) {
+        
+        ArbolBinario<Integer> arb = new ArbolBinario<>();
+
+        arb.insertar(25);
+        arb.insertar(25);
+        arb.insertar(25);
+        arb.insertar(25);
+        arb.insertar(25);
+        arb.insertar(25);
+        arb.insertar(25);
+        arb.insertar(25);
+        arb.insertar(25);
+        arb.insertar(25);
+        arb.insertar(25);
+        arb.insertar(25);
+        arb.insertar(25);
+        arb.insertar(25);
+        arb.recAmplitud();
+        
+        System.out.println("--------------------------------");
+
+        arb.eliminar(9);
+        arb.prefija(arb.getRaiz());
+        
+        
+    }
+}

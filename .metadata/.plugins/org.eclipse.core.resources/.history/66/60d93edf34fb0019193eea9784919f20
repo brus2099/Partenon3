@@ -1,0 +1,118 @@
+package fes.aragon.ventanas;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+
+import fes.aragon.partenon.Ubicacion;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Ubicacion2 extends JDialog {
+
+	private final JPanel contentPanel = new JPanel();
+	private Ubicacion ubicacion = null;
+	private JComboBox comboBox = new JComboBox();
+	private JComboBox comboBox_1 = new JComboBox();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			Ubicacion2 dialog = new Ubicacion2();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public Ubicacion2() {
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(null);
+		contentPanel.setBounds(0, 0, 434, 228);
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel);
+		contentPanel.setLayout(null);
+		{
+			JLabel lblUbicacion = new JLabel("Ubicacion");
+			lblUbicacion.setBounds(173, 10, 45, 14);
+			contentPanel.add(lblUbicacion);
+		}
+		{
+			JLabel lblEstante = new JLabel("Estante");
+			lblEstante.setBounds(20, 75, 37, 14);
+			contentPanel.add(lblEstante);
+		}
+		
+		comboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ubicacion.setEstantes((String)comboBox.getSelectedItem());
+			}
+		});
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Selecciona una opcion", "A", "B", "C", "D", "E"}));
+		comboBox.setBounds(107, 72, 130, 20);
+		contentPanel.add(comboBox);
+		{
+			JLabel lblFila = new JLabel("Fila");
+			lblFila.setBounds(20, 111, 46, 14);
+			contentPanel.add(lblFila);
+		}
+		comboBox_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ubicacion.setFilas(Integer.parseInt((String)comboBox_1.getSelectedItem()));
+			}
+		});
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Selecciona una opcion", "1", "2", "3", "4", "5"}));
+		comboBox_1.setBounds(106, 108, 139, 20);
+		contentPanel.add(comboBox_1);
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setBounds(0, 228, 434, 33);
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane);
+			{
+				JButton okButton = new JButton("OK");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						System.out.println(ubicacion.toString());
+					}
+				});
+				okButton.setActionCommand("OK");
+				buttonPane.add(okButton);
+				getRootPane().setDefaultButton(okButton);
+			}
+			{
+				JButton cancelButton = new JButton("Cancel");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						dispose();
+					}
+				});
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
+			}
+		}
+	}
+
+	private Ubicacion getUbicacion() {
+		return ubicacion;
+	}
+
+	private void setUbicacion(Ubicacion ubicacion) {
+		this.ubicacion = ubicacion;
+	}
+	
+	
+}

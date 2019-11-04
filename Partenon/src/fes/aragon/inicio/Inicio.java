@@ -1,14 +1,19 @@
 package fes.aragon.inicio;
 
 import java.awt.geom.GeneralPath;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
-import fes.aragon.clases.Autor;
-import fes.aragon.clases.Editorial;
-import fes.aragon.clases.Genero;
-import fes.aragon.clases.Libro;
-import fes.aragon.clases.Ubicacion;
+import javax.swing.JOptionPane;
+
+import fes.aragon.archivos.CRUD;
+import fes.aragon.partenon.Autor;
+import fes.aragon.partenon.Editorial;
+import fes.aragon.partenon.Genero;
+import fes.aragon.partenon.Libro;
+import fes.aragon.partenon.Ubicacion;
 
 public class Inicio {
 
@@ -42,10 +47,49 @@ public class Inicio {
 		au1.setCorreo("au1@alfaomega.com");
 		
 		ArrayList<Libro> libros = new ArrayList<>();
-		
 		GregorianCalendar fecha = new GregorianCalendar();
-		for ( int i = 0; i < 10; i++) {
-			Libro libro = new Libro();
+		CRUD archivo = null;
+		try {
+			archivo = new CRUD("Partenon.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			JOptionPane.showMessageDialog(null, "error archivo1");
+			e.printStackTrace();
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(null, "error archivo2");
+			e.printStackTrace();
+		}
+		
+		Libro libro = new Libro();
+		libro.setTitulo("Fundamentos de Ingenieria");
+		//libro.getAutores().add(au1);
+		//libro.getAutores().add(au2);
+		libro.setEdicion("Primera");
+		libro.setIsbn(5);
+		libro.setPais("Mexico");
+		libro.setAnio(fecha.getTime());
+		libro.setPrecio(298.00f);
+		libro.setExistencia(7);
+		libro.setEbook(true);
+		libro.setPasta("Dura");
+		libro.setLenguaje("Español");
+		libro.setEditorial(edit1);
+		try {
+			archivo.crear(libro);
+			libro.setTitulo("Java");
+			archivo.update(libro);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			JOptionPane.showMessageDialog(null, "error archivo");
+			e.printStackTrace();
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(null, "error archivo");
+			e.printStackTrace();
+		}
+		
+		
+		/*for ( int i = 0; i < 10; i++) {
+			libro = new Libro();
 			libro.setTitulo("Fundamentos de Ingenieria"+i);
 			libro.getAutores().add(au1);
 			//libro.getAutores().add(au2);
@@ -57,16 +101,28 @@ public class Inicio {
 			libro.setExistencia(i);
 			libro.setEbook(true);
 			libro.setPasta("Dura");
-			libro.setLenguaje("EspaÃ±ol");
+			libro.setLenguaje("Español");
 			libro.setEditorial(edit1);
 			libros.add(libro);
+			try {
+				archivo.crear(libro);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				JOptionPane.showMessageDialog(null, "error archivo");
+				e.printStackTrace();
+			} catch (IOException e) {
+				JOptionPane.showMessageDialog(null, "error archivo");
+				e.printStackTrace();
+			}
 			
-		}
+		}*/
 		
-		for ( Libro libro : libros) {
-			System.out.println(libro.toString());
+		
+		
+		/*for ( Libro liibro : libros) {
+			System.out.println(liibro.toString());
 			System.out.println("----------------");
-		}
+		}*/
 		
 	}
 }
