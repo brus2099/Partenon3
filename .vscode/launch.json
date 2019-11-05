@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - EntradaDeDatos",
+            "request": "launch",
+            "mainClass": "fes.aragon.inicio.EntradaDeDatos"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - PruebaArbol",
             "request": "launch",
             "mainClass": "fes.aragon.pruebas.PruebaArbol",

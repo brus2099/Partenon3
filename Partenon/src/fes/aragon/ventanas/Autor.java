@@ -5,10 +5,12 @@ import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -58,10 +60,6 @@ public class Autor extends JDialog {
 		}
 		
 		textField = new JTextField();
-		textField.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		textField.setBounds(90, 44, 86, 20);
 		contentPanel.add(textField);
 		textField.setColumns(10);
@@ -76,15 +74,45 @@ public class Autor extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("OK");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String nombre = textField.getText();
+						String correo = textField_1.getText();
+						autor.setNombre(nombre);
+						autor.setCorreo(correo);
+						System.out.println(autor.toString());
+					}
+				});
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
 			}
 			{
 				JButton cancelButton = new JButton("Cancel");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						dispose();
+					}
+				});
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
 			}
 		}
+		if (autor != null) {
+			if (autor.getNombre().equals("")) {
+				this.textField.setText(autor.getNombre());
+			} else {
+				this.textField_1.setText(autor.getCorreo());
+			}
+		}
 	}
+
+	public fes.aragon.partenon.Autor getAutor() {
+		return autor;
+	}
+
+	public void setAutor(fes.aragon.partenon.Autor autor) {
+		this.autor = autor;
+	}
+		
 }

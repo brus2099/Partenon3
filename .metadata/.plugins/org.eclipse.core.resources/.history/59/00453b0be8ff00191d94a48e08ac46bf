@@ -1,0 +1,10 @@
+package fes.aragon.diccionarioarbol;
+
+public class Pruebas {
+
+	Alumno al1 = new Alumno();
+	
+	DiccionarioB<Alumno> dicc = new DiccionarioB<>();
+	
+	dicc.insertar(12, al1);
+}

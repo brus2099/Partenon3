@@ -1,0 +1,12 @@
+package fes.aragon.diccionarioarbol;
+
+public class Pruebas {
+
+	public static <T> void main(String[] args) {
+		Alumno al1 = new Alumno();
+		
+		DiccionarioB<Alumno> dicc = new DiccionarioB<>();
+		T clave = (12);
+		dicc.insertar(12, al1);
+	}
+}

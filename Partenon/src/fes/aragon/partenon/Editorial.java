@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class Editorial implements Serializable {
 
-	private ArrayList<Libro> libros = new ArrayList<>();
 	private String nombre;
 	private String sucursal;
 	private String direccion;
@@ -14,12 +13,7 @@ public class Editorial implements Serializable {
 	
 	public Editorial() {
 	}
-	public ArrayList<Libro> getLibros() {
-		return libros;
-	}
-	public void setLibros(ArrayList<Libro> libros) {
-		this.libros = libros;
-	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -52,7 +46,7 @@ public class Editorial implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Editorial [libros=" + libros + ", nombre=" + nombre + ", sucursal=" + sucursal + ", direccion="
+		return "Editorial [nombre=" + nombre + ", sucursal=" + sucursal + ", direccion="
 				+ direccion + ", correo=" + correo + ", telefono=" + telefono + "]";
 	}
 	

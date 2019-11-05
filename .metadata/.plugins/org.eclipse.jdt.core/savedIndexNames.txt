@@ -1,24 +1,7 @@
 INDEX VERSION 1.126+C:\Users\Bruno Cruz Granados\OneDrive\PC Casa 2015-2017\Documentos\DataStructure-POO\.metadata\.plugins\org.eclipse.jdt.core
-4018783759.index
 415790335.index
-2507285365.index
-3527903221.index
-1428178871.index
-3934384119.index
-3808843675.index
-3935241189.index
-480691596.index
-4193803526.index
 2762713018.index
-197087373.index
-334484962.index
-1545932363.index
+1500599498.index
 1190011570.index
-1628147130.index
-593251401.index
 2053133403.index
-1554051480.index
-526019975.index
-1250186508.index
 1291035255.index
-653055787.index

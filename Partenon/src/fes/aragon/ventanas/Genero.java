@@ -26,11 +26,13 @@ public class Genero extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private Ubicacion ubicacion = new Ubicacion();
+	private fes.aragon.partenon.Genero genero = null;
 	private JComboBox comboBox1 = new JComboBox();
 	private JComboBox comboBox2 = new JComboBox();
 	
 
 	/**
+	 * 
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
@@ -47,7 +49,7 @@ public class Genero extends JDialog {
 	 * Create the dialog.
 	 */
 	public Genero() {
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 385);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -81,7 +83,7 @@ public class Genero extends JDialog {
 		}
 		{
 			
-			comboBox2.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion", "1", "2", "3", "4", "5"}));
+			comboBox2.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion", "1", "2", "3", "4", "5", "6"}));
 			comboBox2.setBounds(82, 133, 152, 20);
 			contentPanel.add(comboBox2);
 		}
@@ -111,12 +113,22 @@ public class Genero extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("OK");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						System.out.println();
+					}
+				});
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
 			}
 			{
 				JButton cancelButton = new JButton("Cancel");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						dispose();
+					}
+				});
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
 			}

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="fes.aragon.dado.Dado"/>
 <fullyQualifiedTypeName name="fes.aragon.Juego"/>
 <fullyQualifiedTypeName name="fes.aragon.Jugador"/>
@@ -16,14 +15,22 @@
 <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.INSTANCEOF"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
-<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="fes.aragon.clases.Libro"/>
 <fullyQualifiedTypeName name="fes.aragon.archivos.CRUD"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="fes.aragon.partenon.Libro"/>
 <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
 <fullyQualifiedTypeName name="java.lang.ClassNotFoundException"/>
 <fullyQualifiedTypeName name="fes.aragon.arbolbinario.ArbolBinario"/>
 <fullyQualifiedTypeName name="fes.aragon.partenon.Ubicacion"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="fes.aragon.partenon.Autor"/>
+<fullyQualifiedTypeName name="fes.aragon.partenon.Editorial"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="fes.aragon.partenon.Genero"/>
+<fullyQualifiedTypeName name="fes.aragon.diccionarioarbol.Alumno"/>
+<fullyQualifiedTypeName name="fes.aragon.diccionarioarbol.DiccionarioB"/>
+<fullyQualifiedTypeName name="fes.aragon.diccionarioarbol.Nodo"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>

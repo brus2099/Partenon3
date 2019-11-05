@@ -15,6 +15,8 @@ import java.awt.event.ActionEvent;
 public class Libro extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
+	private fes.aragon.partenon.Autor autor = new fes.aragon.partenon.Autor();
+	private fes.aragon.partenon.Editorial editorial = new fes.aragon.partenon.Editorial();
 
 	/**
 	 * Launch the application.
@@ -115,6 +117,7 @@ public class Libro extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					Autor dialog = new Autor();
+					dialog.setAutor(autor);
 					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 					dialog.setVisible(true);
 				} catch (Exception ex) {
@@ -124,6 +127,30 @@ public class Libro extends JDialog {
 		});
 		btnAadirAutor.setBounds(95, 66, 116, 23);
 		contentPanel.add(btnAadirAutor);
+		
+		JButton btnAadirEditorial = new JButton("A\u00F1adir editorial");
+		btnAadirEditorial.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Editorial dialog = new Editorial();
+					dialog.setEditorial(editorial);
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+			}
+		});
+		btnAadirEditorial.setBounds(95, 111, 116, 23);
+		contentPanel.add(btnAadirEditorial);
+		
+		JLabel lblAutor = new JLabel("Autor");
+		lblAutor.setBounds(221, 70, 46, 14);
+		contentPanel.add(lblAutor);
+		
+		JLabel lblCorreo = new JLabel("Correo");
+		lblCorreo.setBounds(300, 70, 46, 14);
+		contentPanel.add(lblCorreo);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -136,6 +163,11 @@ public class Libro extends JDialog {
 			}
 			{
 				JButton cancelButton = new JButton("Cancel");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						dispose();
+					}
+				});
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
 			}

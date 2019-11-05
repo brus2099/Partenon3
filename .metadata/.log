@@ -928,3 +928,21 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.m2e.logback.appender 4 0 2019-11-04 08:27:36.191
 !MESSAGE Failed to open search index.
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2019-11-05 08:21:32.182
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [insertar(T, Alumno) {key=Lfes/aragon/diccionarioarbol/DiccionarioB<Lfes/aragon/diccionarioarbol/Alumno;>;.insertar(Lfes/aragon/diccionarioarbol/Alumno;Lfes/aragon/diccionarioarbol/Alumno;)V} [in DiccionarioB [in [Working copy] DiccionarioB.java [in fes.aragon.diccionarioarbol [in src [in EstructuraDatos]]]]] does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:498)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:532)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:258)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:244)
+	at org.eclipse.jdt.internal.core.SourceRefElement.getSourceRange(SourceRefElement.java:218)
+	at org.eclipse.jdt.internal.core.Member.getJavadocRange(Member.java:272)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContentFromSource(JavadocContentAccess2.java:600)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:495)
+	at org.eclipse.jdt.internal.ui.infoviews.JavadocView.getJavadocHtml(JavadocView.java:1097)
+	at org.eclipse.jdt.internal.ui.infoviews.JavadocView.computeInput(JavadocView.java:908)
+	at org.eclipse.jdt.internal.ui.infoviews.AbstractInfoView$2.run(AbstractInfoView.java:722)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2019-11-05 08:21:32.183
+!MESSAGE insertar(T, Alumno) {key=Lfes/aragon/diccionarioarbol/DiccionarioB<Lfes/aragon/diccionarioarbol/Alumno;>;.insertar(Lfes/aragon/diccionarioarbol/Alumno;Lfes/aragon/diccionarioarbol/Alumno;)V} [in DiccionarioB [in [Working copy] DiccionarioB.java [in fes.aragon.diccionarioarbol [in src [in EstructuraDatos]]]]] does not exist

@@ -1,8 +1,0 @@
-package fes.aragon.pruebas;
-
-public class PruebaArbol {
-
-    public static void main(String[] args) {
-        ArbolBina
-    }
-}
