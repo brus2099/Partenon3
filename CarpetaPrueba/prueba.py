@@ -1,0 +1,2 @@
+brus = "Brus"
+print(brus)
