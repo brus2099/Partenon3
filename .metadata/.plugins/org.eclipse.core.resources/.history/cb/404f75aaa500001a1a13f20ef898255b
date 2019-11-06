@@ -5,7 +5,6 @@ import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
@@ -221,22 +220,32 @@ public class Libro extends JDialog {
 				JButton okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						libro.setTitulo(textFieldTitulo.getText());
-						libro.setEdicion(textFieldEdicion.getText());
-						libro.setIsbn(Integer.parseInt((String)textFieldISBN.getText()));
-						libro.setPais(textFieldPais.getText());
-						libro.setAnio(textFieldAnio.getText());
-						libro.setPrecio(Float.parseFloat((String)textFieldPrecio.getText()));
-						libro.setExistencia(Integer.parseInt((String)textFieldExistencia.getText()));
-						libro.setPasta(textFieldPasta.getText());
+						String titulo = textFieldTitulo.getText();
+						libro.setTitulo(titulo);
+						String edicion = textFieldEdicion.getText();
+						libro.setEdicion(edicion);
+						int isbn = Integer.parseInt((String)textFieldISBN.getText());
+						libro.setIsbn(isbn);
+						String pais = textFieldPais.getText();
+						libro.setPais(pais);
+						String anio = textFieldAnio.getText();
+						libro.setAnio(anio);
+						float precio = Float.parseFloat((String)textFieldPrecio.getText());
+						libro.setPrecio(precio);
+						int existencia = Integer.parseInt((String)textFieldExistencia.getText());
+						libro.setExistencia(existencia);
+						String pasta = textFieldPasta.getText();
+						libro.setPasta(pasta);
+						String lenguaje = textFieldLenguaje.getText();
 						boolean ebook;
-						if (comboBoxEbook.getSelectedItem().equals("1")) {
+						String bool = (String) comboBoxEbook.getSelectedItem();
+						if (bool.equals("1")) {
 							ebook = true;
 						} else {
 							ebook = false;
 						}
 						libro.setEbook(ebook);
-						libro.setLenguaje(textFieldLenguaje.getText());
+						libro.setLenguaje(lenguaje);
 						libro.setAutores(autor);
 						libro.setEditorial(editorial);
 						libro.setGenero(genero);

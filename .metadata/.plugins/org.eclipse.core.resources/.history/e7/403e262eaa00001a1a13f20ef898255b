@@ -13,6 +13,9 @@ import java.awt.Font;
 
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+
+import fes.aragon.partenon.Ubicacion;
+
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ActionListener;
@@ -22,7 +25,7 @@ import java.util.ArrayList;
 public class Genero extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private ArrayList<fes.aragon.partenon.Ubicacion> ubicaciones= new ArrayList<>();
+	private Ubicacion ubicacion = new Ubicacion();
 	private fes.aragon.partenon.Genero genero = null;
 	private JComboBox comboBox1 = new JComboBox();
 	private JComboBox comboBox2 = new JComboBox();
@@ -91,8 +94,8 @@ public class Genero extends JDialog {
 		btnAbrirUbicacion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					Ubicacion dialog = new Ubicacion();
-					dialog.setUbicacion(ubicaciones);
+					Ubicacion2 dialog = new Ubicacion2();
+					dialog.setUbicacion(ubicacion);
 					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 					dialog.setVisible(true);
 				} catch (Exception ex) {
@@ -112,7 +115,7 @@ public class Genero extends JDialog {
 					public void actionPerformed(ActionEvent e) {
 						genero.setNombre((String)comboBox1.getSelectedItem());
 						genero.setNumeroGenero(Integer.parseInt((String)comboBox2.getSelectedItem()));
-						genero.setUbicacion(ubicaciones);
+						genero.setUbicacion(ubicacion);
 						System.out.println(genero.toString());
 					}
 				});
@@ -150,13 +153,11 @@ public class Genero extends JDialog {
 		this.genero = genero;
 	}
 
-	public fes.aragon.partenon.Ubicacion getUbicacion() {
-		return ubicaciones;
+	private Ubicacion getUbicacion() {
+		return ubicacion;
 	}
 
-	public void setUbicacion(fes.aragon.partenon.Ubicacion ubicacion) {
-		this.ubicaciones = ubicacion;
+	private void setUbicacion(Ubicacion ubicacion) {
+		this.ubicacion = ubicacion;
 	}
-
-	
 }
