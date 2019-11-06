@@ -29,11 +29,11 @@ public class Inicio {
 		Genero gen = new Genero();
 		gen.setNombre("Ingrenieria");
 		gen.setNumeroGenero(1);
-		gen.getUbicacion().add(ub1);
+		//gen.getUbicacion().add(ub1);
 		Genero gen2 = new Genero();
 		gen2.setNombre("Fisica");
 		gen2.setNumeroGenero(2);
-		gen2.getUbicacion().add(ub2);
+		//gen2.getUbicacion().add(ub2);
 		
 		Editorial edit1 = new Editorial();
 		edit1.setNombre("Alfa Omega");

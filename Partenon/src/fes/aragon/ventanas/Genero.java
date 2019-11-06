@@ -29,7 +29,6 @@ public class Genero extends JDialog {
 	private fes.aragon.partenon.Genero genero = null;
 	private JComboBox comboBox1 = new JComboBox();
 	private JComboBox comboBox2 = new JComboBox();
-	
 
 	/**
 	 * 
@@ -66,12 +65,12 @@ public class Genero extends JDialog {
 			contentPanel.add(lblNombre);
 		}
 		{
-			comboBox1.addItemListener(new ItemListener() {
+			/*comboBox1.addItemListener(new ItemListener() {
 				public void itemStateChanged(ItemEvent e) {
 					System.out.println(comboBox1.getSelectedItem());
 					comboBox2.setSelectedIndex(comboBox1.getSelectedIndex());
 				}
-			});
+			});*/
 			comboBox1.setModel(new DefaultComboBoxModel(new String[] {"Selecciona una opcion", "Fisica", "Matematicas", "Programacion", "Desarrollo Web", "Machine Learning", "Big Data"}));
 			comboBox1.setBounds(82, 62, 146, 20);
 			contentPanel.add(comboBox1);
@@ -82,7 +81,6 @@ public class Genero extends JDialog {
 			contentPanel.add(lblNumeroDeGenero);
 		}
 		{
-			
 			comboBox2.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion", "1", "2", "3", "4", "5", "6"}));
 			comboBox2.setBounds(82, 133, 152, 20);
 			contentPanel.add(comboBox2);
@@ -115,7 +113,10 @@ public class Genero extends JDialog {
 				JButton okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						System.out.println();
+						genero.setNombre((String)comboBox1.getSelectedItem());
+						genero.setNumeroGenero(Integer.parseInt((String)comboBox2.getSelectedItem()));
+						genero.setUbicacion(ubicacion);
+						System.out.println(genero.toString());
 					}
 				});
 				okButton.setActionCommand("OK");
@@ -133,6 +134,23 @@ public class Genero extends JDialog {
 				buttonPane.add(cancelButton);
 			}
 		}
+		
+		/*if (genero != null) {
+			if (genero.getNombre().equals("")) {
+				this.comboBox1.setSelectedItem(genero.getNombre());
+			}
+		}*/
+		
+	}
+
+	
+	
+	public fes.aragon.partenon.Genero getGenero() {
+		return genero;
+	}
+
+	public void setGenero(fes.aragon.partenon.Genero genero) {
+		this.genero = genero;
 	}
 
 	private Ubicacion getUbicacion() {
@@ -142,8 +160,4 @@ public class Genero extends JDialog {
 	private void setUbicacion(Ubicacion ubicacion) {
 		this.ubicacion = ubicacion;
 	}
-
-	
-	
-	
 }

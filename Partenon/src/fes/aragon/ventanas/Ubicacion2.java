@@ -56,11 +56,6 @@ public class Ubicacion2 extends JDialog {
 			contentPanel.add(lblEstante);
 		}
 		
-		comboBox.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				ubicacion.setEstantes((String)comboBox.getSelectedItem());
-			}
-		});
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Selecciona una opcion", "A", "B", "C", "D", "E"}));
 		comboBox.setBounds(107, 72, 130, 20);
 		contentPanel.add(comboBox);
@@ -69,11 +64,6 @@ public class Ubicacion2 extends JDialog {
 			lblFila.setBounds(20, 111, 46, 14);
 			contentPanel.add(lblFila);
 		}
-		comboBox_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				ubicacion.setFilas(Integer.parseInt((String)comboBox_1.getSelectedItem()));
-			}
-		});
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Selecciona una opcion", "1", "2", "3", "4", "5"}));
 		comboBox_1.setBounds(106, 108, 139, 20);
 		contentPanel.add(comboBox_1);
@@ -86,6 +76,8 @@ public class Ubicacion2 extends JDialog {
 				JButton okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						ubicacion.setEstantes((String)comboBox.getSelectedItem());
+						ubicacion.setFilas(Integer.parseInt((String)comboBox_1.getSelectedItem()));
 						System.out.println(ubicacion.toString());
 					}
 				});
@@ -105,13 +97,13 @@ public class Ubicacion2 extends JDialog {
 			}
 		}
 		
-		if(ubicacion!=null){
+		/*if(ubicacion!=null){
 			if(ubicacion.getEstantes().equals("")){
 				this.comboBox.setSelectedItem(ubicacion.getEstantes());
 			} else {
 				this.comboBox_1.setSelectedItem(String.valueOf(ubicacion.getFilas()));
 			}
-		}
+		}*/
 	}
 
 	public Ubicacion getUbicacion() {
