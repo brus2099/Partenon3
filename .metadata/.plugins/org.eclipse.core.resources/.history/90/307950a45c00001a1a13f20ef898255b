@@ -230,10 +230,10 @@ public class Libro extends JDialog {
 						libro.setPais(pais);
 						String anio = textFieldAnio.getText();
 						libro.setAnio(anio);
-						float precio = Float.parseFloat((String)textFieldPrecio.getText());
-						libro.setPrecio(precio);
-						int existencia = Integer.parseInt((String)textFieldExistencia.getText());
-						libro.setExistencia(existencia);
+						//float precio = Float.parseFloat((String)textFieldPrecio.getText());
+						//libro.setPrecio(precio);
+						//int existencia = Integer.parseInt((String)textFieldExistencia.getText());
+						//libro.setExistencia(existencia);
 						String pasta = textFieldPasta.getText();
 						libro.setPasta(pasta);
 						String lenguaje = textFieldLenguaje.getText();

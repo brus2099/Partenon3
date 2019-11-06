@@ -11,7 +11,6 @@ import javax.swing.JLabel;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
@@ -32,7 +31,6 @@ public class Libro extends JDialog {
 	private JTextField textFieldExistencia;
 	private JTextField textFieldPasta;
 	private JTextField textFieldLenguaje;
-	private JComboBox comboBoxEbook = new JComboBox();
 
 	/**
 	 * Launch the application.
@@ -193,7 +191,7 @@ public class Libro extends JDialog {
 		contentPanel.add(textFieldPrecio);
 		textFieldPrecio.setColumns(10);
 		
-		
+		JComboBox comboBoxEbook = new JComboBox();
 		comboBoxEbook.setModel(new DefaultComboBoxModel(new String[] {"0", "1"}));
 		comboBoxEbook.setBounds(95, 292, 130, 20);
 		contentPanel.add(comboBoxEbook);
@@ -238,13 +236,12 @@ public class Libro extends JDialog {
 						libro.setPasta(pasta);
 						String lenguaje = textFieldLenguaje.getText();
 						boolean ebook;
-						String bool = (String) comboBoxEbook.getSelectedItem();
-						if (bool.equals("1")) {
+						String bool = comboBoxEbook
+						if (comboBoxEbook.equals("1")) {
 							ebook = true;
 						} else {
 							ebook = false;
 						}
-						libro.setEbook(ebook);
 						libro.setLenguaje(lenguaje);
 						libro.setAutores(autor);
 						libro.setEditorial(editorial);

@@ -13,7 +13,7 @@ public class Libro implements Serializable {
 	private Editorial editorial;
 	private int isbn;
 	private String pais;
-	private String anio;
+	private Date anio;
 	private float precio;
 	private int existencia;
 	private Genero genero;
@@ -72,11 +72,11 @@ public class Libro implements Serializable {
 		this.pais = pais;
 	}
 
-	public String getAnio() {
+	public Date getAnio() {
 		return anio;
 	}
 
-	public void setAnio(String anio) {
+	public void setAnio(Date anio) {
 		this.anio = anio;
 	}
 
