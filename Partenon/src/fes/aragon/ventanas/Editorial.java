@@ -5,10 +5,12 @@ import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -112,17 +114,18 @@ public class Editorial extends JDialog {
 				JButton okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						String nombre = textField.getText();
-						String sucursal = textField_1.getText();
-						String direccion = textField_2.getText();
-						String correo = textField_3.getText();
-						String telefono = textField_4.getText();
-						editorial.setNombre(nombre);
-						editorial.setSucursal(sucursal);
-						editorial.setDireccion(direccion);
-						editorial.setCorreo(correo);
-						editorial.setTelefono(telefono);
-						System.out.println(editorial.toString());
+						if(textField.getText().equals("")||textField_1.getText().equals("")||textField_2.getText().equals("")||textField_3.getText().equals("")||textField_4.getText().equals("")){
+							JOptionPane.showMessageDialog(null, "Datos Incompletos, favor de verificar");
+						}else{
+							editorial.setNombre(textField.getText());
+							editorial.setSucursal(textField_1.getText());
+							editorial.setDireccion(textField_2.getText());
+							editorial.setCorreo(textField_3.getText());
+							editorial.setTelefono(textField_4.getText());
+							System.out.println(editorial.toString());
+							dispose();
+						}
+						
 					}
 				});
 				okButton.setActionCommand("OK");

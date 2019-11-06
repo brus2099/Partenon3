@@ -58,12 +58,12 @@ public class Autor extends JDialog {
 			lblCorreo.setBounds(10, 80, 46, 14);
 			contentPanel.add(lblCorreo);
 		}
-		
+
 		textField = new JTextField();
 		textField.setBounds(90, 44, 86, 20);
 		contentPanel.add(textField);
 		textField.setColumns(10);
-		
+
 		textField_1 = new JTextField();
 		textField_1.setBounds(90, 77, 86, 20);
 		contentPanel.add(textField_1);
@@ -76,12 +76,19 @@ public class Autor extends JDialog {
 				JButton okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						String nombre = textField.getText();
-						String correo = textField_1.getText();
-						autor.setNombre(nombre);
-						autor.setCorreo(correo);
-						System.out.println(autor.toString());
+						if (textField.getText().equals("")
+								|| textField_1.getText().equals("")) {
+							JOptionPane.showMessageDialog(null,
+									"Datos Incompletos, favor de verificar");
+						} else {
+							autor.setNombre(textField.getText());
+							autor.setCorreo(textField_1.getText());
+							System.out.println(autor.toString());
+							dispose();
+						}
+						
 					}
+
 				});
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
@@ -114,5 +121,5 @@ public class Autor extends JDialog {
 	public void setAutor(fes.aragon.partenon.Autor autor) {
 		this.autor = autor;
 	}
-		
+
 }

@@ -14,11 +14,12 @@ import javax.swing.DefaultComboBoxModel;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 public class Ubicacion extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private fes.aragon.partenon.Ubicacion ubicacion = null;
+	private ArrayList<fes.aragon.partenon.Ubicacion> ubicaciones = null;
 	private JComboBox comboBox = new JComboBox();
 	private JComboBox comboBox_1 = new JComboBox();
 
@@ -94,9 +95,12 @@ public class Ubicacion extends JDialog {
 						if(comboBox.getSelectedItem().equals("Selecciona una opcion") || comboBox_1.getSelectedItem().equals("Selecciona una opcion")){
 							JOptionPane.showMessageDialog(null, "Por favor, ingrese valores.");
 						} else {
-							ubicacion.setEstantes((String)comboBox.getSelectedItem());
-							ubicacion.setFilas(Integer.parseInt((String)comboBox_1.getSelectedItem()));
-							System.out.println(ubicacion.toString());	
+							fes.aragon.partenon.Ubicacion ubic = new fes.aragon.partenon.Ubicacion();
+							ubic.setEstantes((String)comboBox.getSelectedItem());
+							ubic.setFilas(Integer.parseInt((String)comboBox_1.getSelectedItem()));
+							ubicaciones.add(ubic);
+							dispose();
+							System.out.println(ubicaciones.toString());	
 						}
 					}
 				});
@@ -125,13 +129,15 @@ public class Ubicacion extends JDialog {
 		}*/
 	}
 
-	public fes.aragon.partenon.Ubicacion getUbicacion() {
-		return ubicacion;
+	public ArrayList<fes.aragon.partenon.Ubicacion> getUbicacion() {
+		return ubicaciones;
 	}
 
-	public void setUbicacion(fes.aragon.partenon.Ubicacion ubicacion) {
-		this.ubicacion = ubicacion;
+	public void setUbicacion(ArrayList<fes.aragon.partenon.Ubicacion> ubicacion) {
+		this.ubicaciones = ubicacion;
 	}
+
+	
 
 	
 }

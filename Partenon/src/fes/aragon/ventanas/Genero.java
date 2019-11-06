@@ -5,6 +5,7 @@ import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
@@ -13,6 +14,7 @@ import java.awt.Font;
 
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ActionListener;
@@ -68,6 +70,13 @@ public class Genero extends JDialog {
 					comboBox2.setSelectedIndex(comboBox1.getSelectedIndex());
 				}
 			});*/
+			comboBox1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					if(comboBox1.getSelectedItem().equals("Selecciona una opcion")){
+						JOptionPane.showMessageDialog(null, "Seleccione una opcion valida");
+					}
+				}
+			});
 			comboBox1.setModel(new DefaultComboBoxModel(new String[] {"Selecciona una opcion", "Fisica", "Matematicas", "Programacion", "Desarrollo Web", "Machine Learning", "Big Data"}));
 			comboBox1.setBounds(82, 62, 146, 20);
 			contentPanel.add(comboBox1);
@@ -78,7 +87,14 @@ public class Genero extends JDialog {
 			contentPanel.add(lblNumeroDeGenero);
 		}
 		{
-			comboBox2.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion", "1", "2", "3", "4", "5", "6"}));
+			comboBox2.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					if(comboBox2.getSelectedItem().equals("Selecciona una opcion")){
+						JOptionPane.showMessageDialog(null, "Seleccione una opcion valida");
+					}
+				}
+			});
+			comboBox2.setModel(new DefaultComboBoxModel(new String[] {"Selecciona una opcion", "1", "2", "3", "4", "5", "6"}));
 			comboBox2.setBounds(82, 133, 152, 20);
 			contentPanel.add(comboBox2);
 		}
@@ -110,10 +126,15 @@ public class Genero extends JDialog {
 				JButton okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						genero.setNombre((String)comboBox1.getSelectedItem());
-						genero.setNumeroGenero(Integer.parseInt((String)comboBox2.getSelectedItem()));
-						genero.setUbicacion(ubicaciones);
-						System.out.println(genero.toString());
+						if(comboBox1.getSelectedItem().equals("Selecciona una opcion") || comboBox2.getSelectedItem().equals("Selecciona una opcion")){
+							JOptionPane.showMessageDialog(null, "Por favor, ingrese valores.");
+						} else {
+							genero.setNombre((String)comboBox1.getSelectedItem());
+							genero.setNumeroGenero(Integer.parseInt((String)comboBox2.getSelectedItem()));
+							genero.setUbicacion(ubicaciones);
+							System.out.println(genero.toString());
+							dispose();
+						}
 					}
 				});
 				okButton.setActionCommand("OK");
@@ -150,13 +171,15 @@ public class Genero extends JDialog {
 		this.genero = genero;
 	}
 
-	public fes.aragon.partenon.Ubicacion getUbicacion() {
+	public ArrayList<fes.aragon.partenon.Ubicacion> getUbicaciones() {
 		return ubicaciones;
 	}
 
-	public void setUbicacion(fes.aragon.partenon.Ubicacion ubicacion) {
-		this.ubicaciones = ubicacion;
+	public void setUbicaciones(ArrayList<fes.aragon.partenon.Ubicacion> ubicaciones) {
+		this.ubicaciones = ubicaciones;
 	}
+
+	
 
 	
 }

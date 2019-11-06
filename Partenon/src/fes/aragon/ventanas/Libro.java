@@ -16,6 +16,10 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class Libro extends JDialog {
 
@@ -168,6 +172,12 @@ public class Libro extends JDialog {
 		textFieldTitulo.setColumns(10);
 		
 		textFieldEdicion = new JTextField();
+		textFieldEdicion.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				System.out.println("Hola");
+			}
+		});
 		textFieldEdicion.setBounds(95, 92, 86, 20);
 		contentPanel.add(textFieldEdicion);
 		textFieldEdicion.setColumns(10);
@@ -221,6 +231,9 @@ public class Libro extends JDialog {
 				JButton okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						
+						if(textfield)
+						
 						libro.setTitulo(textFieldTitulo.getText());
 						libro.setEdicion(textFieldEdicion.getText());
 						libro.setIsbn(Integer.parseInt((String)textFieldISBN.getText()));

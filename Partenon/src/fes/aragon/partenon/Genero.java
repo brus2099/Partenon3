@@ -7,7 +7,7 @@ public class Genero implements Serializable {
 
 	private String nombre;
 	private int numeroGenero;
-	private Ubicacion ubicacion = new Ubicacion();
+	private ArrayList<Ubicacion> ubicacion = new ArrayList<>();
 	
 	public Genero() {
 	}
@@ -28,11 +28,11 @@ public class Genero implements Serializable {
 		this.numeroGenero = numeroGenero;
 	}
 
-	public Ubicacion getUbicacion() {
+	public ArrayList<Ubicacion> getUbicacion() {
 		return ubicacion;
 	}
 
-	public void setUbicacion(Ubicacion ubicacion) {
+	public void setUbicacion(ArrayList<Ubicacion> ubicacion) {
 		this.ubicacion = ubicacion;
 	}
 
