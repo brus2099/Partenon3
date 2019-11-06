@@ -13,11 +13,12 @@ import javax.swing.JTextField;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 public class Autor extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private fes.aragon.partenon.Autor autor = null;
+	private ArrayList<fes.aragon.partenon.Autor> autores = null;
 	private JTextField textField;
 	private JTextField textField_1;
 
@@ -81,9 +82,11 @@ public class Autor extends JDialog {
 							JOptionPane.showMessageDialog(null,
 									"Datos Incompletos, favor de verificar");
 						} else {
+							fes.aragon.partenon.Autor autor = new fes.aragon.partenon.Autor();
 							autor.setNombre(textField.getText());
 							autor.setCorreo(textField_1.getText());
-							System.out.println(autor.toString());
+							autores.add(autor);
+							System.out.println(autores.toString());
 							dispose();
 						}
 						
@@ -105,21 +108,23 @@ public class Autor extends JDialog {
 				buttonPane.add(cancelButton);
 			}
 		}
-		if (autor != null) {
-			if (autor.getNombre().equals("")) {
-				this.textField.setText(autor.getNombre());
+		/*if (autores != null) {
+			if (autores.getNombre().equals("")) {
+				this.textField.setText(autores.getNombre());
 			} else {
-				this.textField_1.setText(autor.getCorreo());
+				this.textField_1.setText(autores.getCorreo());
 			}
-		}
+		}*/
 	}
 
-	public fes.aragon.partenon.Autor getAutor() {
-		return autor;
+	public ArrayList<fes.aragon.partenon.Autor> getAutores() {
+		return autores;
 	}
 
-	public void setAutor(fes.aragon.partenon.Autor autor) {
-		this.autor = autor;
+	public void setAutores(ArrayList<fes.aragon.partenon.Autor> autores) {
+		this.autores = autores;
 	}
+
+	
 
 }

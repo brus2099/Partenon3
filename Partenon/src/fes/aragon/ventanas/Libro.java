@@ -16,15 +16,17 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.util.ArrayList;
 
 public class Libro extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private fes.aragon.partenon.Autor autor = new fes.aragon.partenon.Autor();
+	private ArrayList<fes.aragon.partenon.Autor> autores = new ArrayList<>();
 	private fes.aragon.partenon.Editorial editorial = new fes.aragon.partenon.Editorial();
 	private fes.aragon.partenon.Genero genero = new fes.aragon.partenon.Genero();
 	private fes.aragon.partenon.Libro libro = new fes.aragon.partenon.Libro();
@@ -139,7 +141,7 @@ public class Libro extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					Autor dialog = new Autor();
-					dialog.setAutor(autor);
+					dialog.setAutores(autores);
 					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 					dialog.setVisible(true);
 				} catch (Exception ex) {
@@ -167,6 +169,14 @@ public class Libro extends JDialog {
 		contentPanel.add(btnAadirEditorial);
 		
 		textFieldTitulo = new JTextField();
+		textFieldTitulo.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				if (textFieldTitulo.getText().equals("")){
+					JOptionPane.showMessageDialog(null, "Por favor, introduce un Título.");
+				}
+			}
+		});
 		textFieldTitulo.setBounds(95, 42, 86, 20);
 		contentPanel.add(textFieldTitulo);
 		textFieldTitulo.setColumns(10);
@@ -175,7 +185,9 @@ public class Libro extends JDialog {
 		textFieldEdicion.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				System.out.println("Hola");
+				if (textFieldEdicion.getText().equals("")){
+					JOptionPane.showMessageDialog(null, "Por favor introduce una Edición");
+				}
 			}
 		});
 		textFieldEdicion.setBounds(95, 92, 86, 20);
@@ -188,12 +200,28 @@ public class Libro extends JDialog {
 		textFieldISBN.setColumns(10);
 		
 		textFieldPais = new JTextField();
+		textFieldPais.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				if (textFieldPais.getText().equals("")){
+					JOptionPane.showMessageDialog(null, "Por favor, introduce un Pais.");
+				}
+			}
+		});
 		textFieldPais.setText("");
 		textFieldPais.setBounds(95, 167, 86, 20);
 		contentPanel.add(textFieldPais);
 		textFieldPais.setColumns(10);
 		
 		textFieldAnio = new JTextField();
+		textFieldAnio.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				if (textFieldAnio.getText().equals("")){
+					JOptionPane.showMessageDialog(null, "Por favor, introduce un Año.");
+				}
+			}
+		});
 		textFieldAnio.setBounds(95, 192, 86, 20);
 		contentPanel.add(textFieldAnio);
 		textFieldAnio.setColumns(10);
@@ -203,9 +231,16 @@ public class Libro extends JDialog {
 		textFieldPrecio.setBounds(95, 217, 86, 20);
 		contentPanel.add(textFieldPrecio);
 		textFieldPrecio.setColumns(10);
+		comboBoxEbook.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(comboBoxEbook.getSelectedItem().equals("Selecciona una opcion")){
+					JOptionPane.showMessageDialog(null, "Seleccione una opcion valida");
+				}
+			}
+		});
 		
 		
-		comboBoxEbook.setModel(new DefaultComboBoxModel(new String[] {"0", "1"}));
+		comboBoxEbook.setModel(new DefaultComboBoxModel(new String[] {"Selecciona una opcion", "Disponible", "No disponible"}));
 		comboBoxEbook.setBounds(95, 292, 130, 20);
 		contentPanel.add(comboBoxEbook);
 		
@@ -215,11 +250,27 @@ public class Libro extends JDialog {
 		textFieldExistencia.setColumns(10);
 		
 		textFieldPasta = new JTextField();
+		textFieldPasta.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				if (textFieldPasta.getText().equals("")){
+					JOptionPane.showMessageDialog(null, "Por favor, introduce un tipo de Pasta.");
+				}
+			}
+		});
 		textFieldPasta.setBounds(95, 317, 86, 20);
 		contentPanel.add(textFieldPasta);
 		textFieldPasta.setColumns(10);
 		
 		textFieldLenguaje = new JTextField();
+		textFieldLenguaje.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				if (textFieldLenguaje.getText().equals("")){
+					JOptionPane.showMessageDialog(null, "Por favor, introduce un Lenguaje.");
+				}
+			}
+		});
 		textFieldLenguaje.setBounds(95, 342, 86, 20);
 		contentPanel.add(textFieldLenguaje);
 		textFieldLenguaje.setColumns(10);
@@ -231,29 +282,38 @@ public class Libro extends JDialog {
 				JButton okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
-						if(textfield)
-						
-						libro.setTitulo(textFieldTitulo.getText());
-						libro.setEdicion(textFieldEdicion.getText());
-						libro.setIsbn(Integer.parseInt((String)textFieldISBN.getText()));
-						libro.setPais(textFieldPais.getText());
-						libro.setAnio(textFieldAnio.getText());
-						libro.setPrecio(Float.parseFloat((String)textFieldPrecio.getText()));
-						libro.setExistencia(Integer.parseInt((String)textFieldExistencia.getText()));
-						libro.setPasta(textFieldPasta.getText());
-						boolean ebook;
-						if (comboBoxEbook.getSelectedItem().equals("1")) {
-							ebook = true;
+						if (textFieldTitulo.getText().equals("") || 
+							textFieldEdicion.getText().equals("") || 
+							textFieldISBN.getText().equals("") || 
+							textFieldPais.getText().equals("") || 
+							textFieldAnio.getText().equals("") ||
+							textFieldExistencia.getText().equals("") || 
+							textFieldPasta.getText().equals("") || 
+							textFieldLenguaje.getText().equals("")){
+							JOptionPane.showMessageDialog(null, "Por favor, verifica los datos.");
 						} else {
-							ebook = false;
+							libro.setTitulo(textFieldTitulo.getText());
+							libro.setEdicion(textFieldEdicion.getText());
+							libro.setIsbn(Integer.parseInt((String)textFieldISBN.getText()));
+							libro.setPais(textFieldPais.getText());
+							libro.setAnio(textFieldAnio.getText());
+							libro.setPrecio(Float.parseFloat((String)textFieldPrecio.getText()));
+							libro.setExistencia(Integer.parseInt((String)textFieldExistencia.getText()));
+							libro.setPasta(textFieldPasta.getText());
+							boolean ebook;
+							if (comboBoxEbook.getSelectedItem().equals("Disponible")) {
+								ebook = true;
+							} else {
+								ebook = false;
+							}
+							libro.setEbook(ebook);
+							libro.setLenguaje(textFieldLenguaje.getText());
+							libro.setAutores(autores);
+							libro.setEditorial(editorial);
+							libro.setGenero(genero);
+							System.out.println(libro.toString());
 						}
-						libro.setEbook(ebook);
-						libro.setLenguaje(textFieldLenguaje.getText());
-						libro.setAutores(autor);
-						libro.setEditorial(editorial);
-						libro.setGenero(genero);
-						System.out.println(libro.toString());
+						
 					}
 				});
 				okButton.setActionCommand("OK");

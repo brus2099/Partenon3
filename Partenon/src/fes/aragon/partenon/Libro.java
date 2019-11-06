@@ -8,7 +8,7 @@ public class Libro implements Serializable {
 
 	private String titulo;
 	//private String autor;
-	private Autor autores = new Autor();
+	private ArrayList<Autor> autores = new ArrayList<>();
 	private String edicion;
 	private Editorial editorial;
 	private int isbn;
@@ -32,11 +32,11 @@ public class Libro implements Serializable {
 		this.titulo = titulo;
 	}
 
-	public Autor getAutores() {
+	public ArrayList<Autor> getAutores() {
 		return autores;
 	}
 
-	public void setAutores(Autor autores) {
+	public void setAutores(ArrayList<Autor> autores) {
 		this.autores = autores;
 	}
 

@@ -27,7 +27,7 @@ public class Inicio {
 		ub2.setFilas(3);
 		
 		Genero gen = new Genero();
-		gen.setNombre("Ingrenieria");
+		gen.setNombre("Ingenieria");
 		gen.setNumeroGenero(1);
 		//gen.getUbicacion().add(ub1);
 		Genero gen2 = new Genero();
@@ -67,7 +67,7 @@ public class Inicio {
 		libro.setEdicion("Primera");
 		libro.setIsbn(5);
 		libro.setPais("Mexico");
-		libro.setAnio(fecha.getTime());
+		//libro.setAnio(fecha.getTime());
 		libro.setPrecio(298.00f);
 		libro.setExistencia(7);
 		libro.setEbook(true);
