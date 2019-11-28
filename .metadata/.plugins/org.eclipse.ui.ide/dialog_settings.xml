@@ -17,6 +17,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\Bruno Cruz Granados\OneDrive\PC Casa 2015-2017\Documentos\DataStructure-POO\Estructura_de_Datos"/>
 			<item value="C:\Users\Bruno Cruz Granados\OneDrive\PC Casa 2015-2017\Documentos\DataStructure-POO\TablePersonalData"/>
 			<item value="C:\Users\Bruno Cruz Granados\OneDrive\PC Casa 2015-2017\Documentos\DataStructure-POO\EstructuraDatos"/>
 			<item value="/home/brus_cg/Documents/DataStructure/MVCTablaRacionales"/>

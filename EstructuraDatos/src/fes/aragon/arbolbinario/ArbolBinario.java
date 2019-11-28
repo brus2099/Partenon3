@@ -39,7 +39,7 @@ public class ArbolBinario<T> {
 			cola.insertar(raiz);
 			while (!cola.vacia()) {
 				n = cola.sacar();
-				System.out.println(n.getDato());
+				System.out.print(n.getDato()+" ");
 				if (n.getHijoIzq() != null) {
 					cola.insertar(n.getHijoIzq());
 				}
@@ -52,7 +52,7 @@ public class ArbolBinario<T> {
 
 	public void prefija(Nodo n) {
 		if (n != null) {
-			System.out.println(n.getDato());
+			System.out.print(n.getDato()+" ");
 			prefija(n.getHijoIzq());
 			prefija(n.getHijoDer());
 		}
@@ -63,7 +63,15 @@ public class ArbolBinario<T> {
 		if (n != null) {
 			posfija(n.getHijoIzq());
 			posfija(n.getHijoDer());
-			System.out.println(n.getDato());
+			System.out.print(n.getDato()+" ");
+		}
+	}
+
+	public void interfija(Nodo n) {
+		if (n != null) {
+			interfija(n.getHijoIzq());
+			System.out.print(n.getDato()+" ");
+			interfija(n.getHijoDer());
 		}
 	}
 
@@ -74,18 +82,7 @@ public class ArbolBinario<T> {
 			cad = cad + n.getDato();
 		}
 	}
-
-	public void interfija(Nodo n) {
-		if (n != null) {
-
-			interfija(n.getHijoIzq());
-			System.out.println(n.getDato());
-			interfija(n.getHijoDer());
-
-		}
-
-	}
-
+	
 	public Nodo<T> getRaiz() {
 		return raiz;
 	}

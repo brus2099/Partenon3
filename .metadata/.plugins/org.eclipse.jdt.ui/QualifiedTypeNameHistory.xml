@@ -20,7 +20,6 @@
 <fullyQualifiedTypeName name="fes.aragon.archivos.CRUD"/>
 <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
 <fullyQualifiedTypeName name="java.lang.ClassNotFoundException"/>
-<fullyQualifiedTypeName name="fes.aragon.arbolbinario.ArbolBinario"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="fes.aragon.partenon.Editorial"/>
 <fullyQualifiedTypeName name="fes.aragon.diccionarioarbol.Alumno"/>
@@ -29,10 +28,13 @@
 <fullyQualifiedTypeName name="fes.aragon.ventanas.Genero"/>
 <fullyQualifiedTypeName name="fes.aragon.partenon.Genero"/>
 <fullyQualifiedTypeName name="fes.aragon.partenon.Libro"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="fes.aragon.partenon.Ubicacion"/>
 <fullyQualifiedTypeName name="javax.swing.JButton"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 <fullyQualifiedTypeName name="fes.aragon.partenon.Autor"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="fes.aragon.arbolbinario.ArbolBinario"/>
+<fullyQualifiedTypeName name="fes.aragon.arbolBinario.ArbolBinario"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,159 @@
+package windows;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import java.awt.Color;
+
+import javax.swing.JLabel;
+
+import java.awt.Font;
+
+import javax.swing.JTextPane;
+import javax.swing.JButton;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import javax.swing.SwingConstants;
+
+public class ElectricFlow5 extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ElectricFlow5 frame = new ElectricFlow5();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ElectricFlow5() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 313);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(0, 51, 102));
+		panel.setBounds(0, 0, 434, 55);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblque = new JLabel("Flujo El\u00E9ctrico");
+		lblque.setHorizontalAlignment(SwingConstants.CENTER);
+		lblque.setBounds(94, 11, 251, 28);
+		panel.add(lblque);
+		lblque.setForeground(new Color(255, 255, 153));
+		lblque.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 24));
+		lblque.setBackground(Color.WHITE);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(255, 255, 240));
+		panel_1.setBounds(0, 0, 434, 274);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		ImageIcon ec1 = new ImageIcon(getClass().getResource("/Imagenes/FlowEc1.jpg"));
+		JLabel ec1Photo = new JLabel();
+		ec1Photo.setBounds(136, 112, 50, 20);
+		ec1Photo.setIcon(new ImageIcon(ec1.getImage().getScaledInstance(50, 20, Image.SCALE_SMOOTH)));
+		panel_1.add(ec1Photo);
+		
+		JTextPane txtpnDondeLaUnidad = new JTextPane();
+		txtpnDondeLaUnidad.setText("donde la unidad es:");
+		txtpnDondeLaUnidad.setForeground(new Color(0, 0, 128));
+		txtpnDondeLaUnidad.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 13));
+		txtpnDondeLaUnidad.setEditable(false);
+		txtpnDondeLaUnidad.setBackground(new Color(255, 255, 240));
+		txtpnDondeLaUnidad.setBounds(198, 112, 136, 20);
+		panel_1.add(txtpnDondeLaUnidad);
+		
+		ImageIcon newton = new ImageIcon(getClass().getResource("/Imagenes/FlowNewton.jpg"));
+		JLabel label = new JLabel();
+		label.setBounds(328, 112, 29, 34);
+		label.setIcon(new ImageIcon(newton.getImage().getScaledInstance(29, 34, Image.SCALE_SMOOTH)));
+		panel_1.add(label);
+		
+		JTextPane txtpnEsTodaRegin = new JTextPane();
+		txtpnEsTodaRegin.setEditable(false);
+		txtpnEsTodaRegin.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 13));
+		txtpnEsTodaRegin.setForeground(new Color(0, 0, 128));
+		txtpnEsTodaRegin.setBackground(new Color(255, 255, 240));
+		txtpnEsTodaRegin.setText(" El flujo el\u00E9ctrico es proporcional a la intensidad de campo el\u00E9ctrico y al \u00E1rea de la superficie; es decir, este es igual al n\u00FAmero de lineas de campo el\u00E9ctrico que penetran alguna superficie. Esto es:");
+		txtpnEsTodaRegin.setBounds(10, 62, 414, 72);
+		panel_1.add(txtpnEsTodaRegin);
+		
+		JButton btnNewButton = new JButton("Atras");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					ElectricFlow3 frame = new ElectricFlow3();
+					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+				dispose();
+			}
+		});
+		btnNewButton.setForeground(new Color(255, 255, 153));
+		btnNewButton.setBackground(new Color(0, 51, 102));
+		btnNewButton.setBounds(10, 241, 89, 23);
+		panel_1.add(btnNewButton);
+		
+		JButton btnNewButton_2 = new JButton("Ley de Gauss");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					VentanaGauss frame = new VentanaGauss();
+					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+				dispose();
+			}
+		});
+		btnNewButton_2.setForeground(new Color(255, 255, 153));
+		btnNewButton_2.setBackground(new Color(0, 51, 102));
+		btnNewButton_2.setBounds(314, 241, 110, 23);
+		panel_1.add(btnNewButton_2);
+		
+		JTextPane txtpnPeroSiLos = new JTextPane();
+		txtpnPeroSiLos.setText("Pero, si los vectores E y A son colineales, entonces:");
+		txtpnPeroSiLos.setForeground(new Color(0, 0, 128));
+		txtpnPeroSiLos.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 13));
+		txtpnPeroSiLos.setEditable(false);
+		txtpnPeroSiLos.setBackground(new Color(255, 255, 240));
+		txtpnPeroSiLos.setBounds(10, 162, 347, 20);
+		panel_1.add(txtpnPeroSiLos);
+		
+		JLabel label_1 = new JLabel();
+		label_1.setBounds(183, 193, 59, 28);
+		label_1.setIcon(new ImageIcon(ec1.getImage().getScaledInstance(59, 28, Image.SCALE_SMOOTH)));
+		panel_1.add(label_1);
+		
+		
+	}
+}

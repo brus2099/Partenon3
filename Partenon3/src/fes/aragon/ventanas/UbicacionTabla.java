@@ -175,7 +175,6 @@ public class UbicacionTabla extends javax.swing.JDialog {
             dialog.setTabla(this.jTable1);
             dialog.modificar();
             dialog.setVisible(true);
-
         } else {
             JOptionPane.showMessageDialog(rootPane, "Selecciona una fila");
         }

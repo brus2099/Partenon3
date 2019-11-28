@@ -1,0 +1,142 @@
+package windows;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import java.awt.Color;
+
+import javax.swing.JLabel;
+
+import java.awt.Font;
+
+import javax.swing.JTextPane;
+import javax.swing.JButton;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import javax.swing.SwingConstants;
+
+public class ElectricFlow2 extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ElectricFlow2 frame = new ElectricFlow2();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ElectricFlow2() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 390);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(0, 51, 102));
+		panel.setBounds(0, 0, 434, 55);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblque = new JLabel("Flujo El\u00E9ctrico");
+		lblque.setHorizontalAlignment(SwingConstants.CENTER);
+		lblque.setBounds(94, 11, 251, 28);
+		panel.add(lblque);
+		lblque.setForeground(new Color(255, 255, 153));
+		lblque.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 24));
+		lblque.setBackground(Color.WHITE);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(255, 255, 240));
+		panel_1.setBounds(0, 0, 434, 351);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JTextPane txtpnEsTodaRegin = new JTextPane();
+		txtpnEsTodaRegin.setEditable(false);
+		txtpnEsTodaRegin.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 13));
+		txtpnEsTodaRegin.setForeground(new Color(0, 0, 128));
+		txtpnEsTodaRegin.setBackground(new Color(255, 255, 240));
+		txtpnEsTodaRegin.setText("Como se dijo antes, es posible determinar el flujo el\u00E9ctrico mediante la siguiente ecuaci\u00F3n:");
+		txtpnEsTodaRegin.setBounds(10, 62, 414, 46);
+		panel_1.add(txtpnEsTodaRegin);
+		
+		JTextPane txtpnConEsteNombre = new JTextPane();
+		txtpnConEsteNombre.setToolTipText("");
+		txtpnConEsteNombre.setEditable(false);
+		txtpnConEsteNombre.setForeground(new Color(0, 0, 128));
+		txtpnConEsteNombre.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 13));
+		txtpnConEsteNombre.setBackground(new Color(255, 255, 240));
+		txtpnConEsteNombre.setText("Pero, para obtener el producto escalar de dos vectores expresados en notaci\u00F3n polar, mediante de definici\u00F3n matem\u00E1tica, se multiplica sus magnitudes por el coseno del \u00E1ngulo entre los vectores y se expresa con la siguiente ecuaci\u00F3n:");
+		txtpnConEsteNombre.setBounds(10, 136, 414, 70);
+		panel_1.add(txtpnConEsteNombre);
+		
+		JButton btnNewButton = new JButton("Atras");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					ElectricFlow frame = new ElectricFlow();
+					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+				dispose();
+			}
+		});
+		btnNewButton.setForeground(new Color(255, 255, 153));
+		btnNewButton.setBackground(new Color(0, 51, 102));
+		btnNewButton.setBounds(10, 318, 89, 23);
+		panel_1.add(btnNewButton);
+		
+		JButton btnNewButton_2 = new JButton("Siguiente");
+		btnNewButton_2.setForeground(new Color(255, 255, 153));
+		btnNewButton_2.setBackground(new Color(0, 51, 102));
+		btnNewButton_2.setBounds(335, 318, 89, 23);
+		panel_1.add(btnNewButton_2);
+		
+		ImageIcon ec1 = new ImageIcon("FlowEc1.jpg");
+		JLabel ec1Photo = new JLabel();
+		ec1Photo.setBounds(172, 102, 80, 31);
+		ec1Photo.setIcon(new ImageIcon(ec1.getImage().getScaledInstance(80, 31, Image.SCALE_SMOOTH)));
+		panel_1.add(ec1Photo);
+		
+		JTextPane txtpnDondeEsEl = new JTextPane();
+		txtpnDondeEsEl.setToolTipText("");
+		txtpnDondeEsEl.setText("Donde es el \u00E1ngulo de inclinaci\u00F3n entre el vector \u00E1rea y las lineas de fuerza de campo el\u00E9ctrico.");
+		txtpnDondeEsEl.setForeground(new Color(0, 0, 128));
+		txtpnDondeEsEl.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 13));
+		txtpnDondeEsEl.setEditable(false);
+		txtpnDondeEsEl.setBackground(new Color(255, 255, 240));
+		txtpnDondeEsEl.setBounds(10, 263, 414, 70);
+		panel_1.add(txtpnDondeEsEl);
+		
+		ImageIcon ec2 = new ImageIcon("FlowEc2.jpg");
+		JLabel ec2Photo = new JLabel();
+		ec2Photo.setBounds(163, 217, 118, 31);
+		ec2Photo.setIcon(new ImageIcon(ec2.getImage().getScaledInstance(118, 31, Image.SCALE_SMOOTH)));
+		panel_1.add(ec2Photo);
+	}
+}

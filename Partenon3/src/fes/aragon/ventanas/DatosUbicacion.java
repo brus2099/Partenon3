@@ -159,10 +159,10 @@ public class DatosUbicacion extends javax.swing.JDialog {
         ub.setEstantes((String) this.jComboBox1.getSelectedItem());
         ub.setFilas(Integer.parseInt((String) this.jComboBox2.getSelectedItem()));
         if(!this.modificar){
-        this.datos.add(ub);
-        }else{
-            this.datos.set(this.fila, ub);
-        }
+            this.datos.add(ub);
+            } else {
+                this.datos.set(this.fila, ub);
+            }
         ((TablaModelUbicacion) this.tabla.getModel()).fireTableDataChanged();
     }//GEN-LAST:event_jButton1ActionPerformed
 
